@@ -617,7 +617,8 @@ const run = async (userOptions, { fs } = { fs: nativeFs }) => {
   if (
     destinationDir === sourceDir &&
     options.saveAs === "html" &&
-    fs.existsSync(path.join(sourceDir, "200.html"))
+    fs.existsSync(path.join(sourceDir, "200.html")) &&
+    !options.runAgain
   ) {
     console.log(
       `🔥  200.html is present in the sourceDir (${sourceDir}). You can not run react-snap twice - this will break the build`
